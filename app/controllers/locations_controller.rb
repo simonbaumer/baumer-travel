@@ -4,9 +4,12 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @json = Location.all.to_gmaps4rails
   end
 
+  def admin
+    @locations = Location.all
+  end
   # GET /locations/1
   # GET /locations/1.json
   def show
